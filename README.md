@@ -116,7 +116,13 @@ The guide includes step-by-step diagnostic commands and solutions for each commo
 Run the diagnostic tool to automatically check your configuration:
 
 ```vim
-:luafile configs/diagnostics.lua
+" Full diagnostic check
+:lua require("custom.configs.diagnostics").run_all_checks()
+
+" Individual checks (if you want to run specific checks)
+:lua require("custom.configs.diagnostics").check_lsp_config()
+:lua require("custom.configs.diagnostics").check_mason_tools()
+:lua require("custom.configs.diagnostics").check_plugins()
 ```
 
 This tool will check:
@@ -126,6 +132,18 @@ This tool will check:
 - ✅ LSP client status
 - ✅ Filetype detection
 - ✅ Format on save functionality
+
+Example output:
+```
+🔍 NvChad Configuration Diagnostics
+
+=== Chadrc Configuration Check ===
+[PASS] custom.chadrc found
+[PASS] UI configuration found
+  Theme: github_dark
+[PASS] Plugin configuration reference found
+[PASS] Custom mappings found
+```
 
 ## 📝 Notes
 

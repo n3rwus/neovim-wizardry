@@ -15,6 +15,16 @@ Before diving into specific issues, run these commands in Neovim to gather diagn
 :lua print(vim.inspect(require("core.utils").load_config()))  " Check config
 ```
 
+### 🔧 Automated Configuration Check
+
+For a comprehensive automated check of your NvChad configuration:
+
+```vim
+:lua require("custom.configs.diagnostics").run_all_checks()
+```
+
+This will check all common configuration issues and provide colored output showing what's working and what needs attention.
+
 ---
 
 ## 1. 🔍 LSP Setup Not Attaching Properly
