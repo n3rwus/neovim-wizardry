@@ -5,7 +5,7 @@ local capabilities = config.capabilities
 
 -- Ensure consistent position encoding
 if capabilities.general then
-  capabilities.general.positionEncodings = { "utf-16", "utf-8" }
+  capabilities.general.positionEncodings = { "utf-8" }
 end
 
 -- Custom on_attach function with format on save
