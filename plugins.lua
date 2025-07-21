@@ -41,20 +41,12 @@ local plugins = {
     end,
   },
   {
-    "nvimtools/none-ls.nvim",
-    ft = {"python"},
-    opts = function()
-      return require "custom.configs.none-ls"
-    end,
-  },
-  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "black",
         "debugpy",
         "mypy",
-        "ruff-lsp",
+        "ruff", -- Modern Ruff with built-in LSP server and formatter
         "pyright",
       },
     },

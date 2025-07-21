@@ -19,8 +19,7 @@ This custom configuration is tailored for:
 ├── mappings.lua         # Additional keybindings for custom features
 ├── README.md           # This file
 └── configs/
-    ├── lspconfig.lua   # LSP server configurations
-    └── none-ls.lua     # Formatting and linting setup
+    └── lspconfig.lua   # LSP server configurations with auto-formatting
 ```
 
 ## 🎨 Theme & UI
@@ -32,16 +31,16 @@ This custom configuration is tailored for:
 
 ### Development Tools
 - **nvim-dap** + **nvim-dap-ui**: Full debugging support with intuitive UI
-- **nvim-dap-python**: Python-specific debugging capabilities
-- **none-ls**: Code formatting and linting integration
+- **nvim-dap-python**: Python-specific debugging capabilities  
+- **Modern LSP**: Direct formatting and linting through Ruff's built-in LSP server
 
 ### Language Support
 - **Pyright**: Advanced Python language server for type checking and IntelliSense
-- **Ruff LSP**: Lightning-fast Python linter and formatter
+- **Ruff**: Lightning-fast Python linter and formatter with built-in LSP server
 - **Mason Integration**: Automatic tool installation and management
 
 ### Code Quality Tools
-- **Black**: Uncompromising Python code formatter
+- **Ruff**: Ultra-fast Python formatter and linter (replaces Black + Flake8)
 - **Mypy**: Static type checker for Python
 - **Debugpy**: Python debugger adapter
 
@@ -59,13 +58,13 @@ This custom configuration is tailored for:
 
 ### LSP Configuration
 - **Pyright**: Comprehensive Python language support with type checking
-- **Ruff LSP**: Fast linting and code analysis
+- **Ruff**: Fast linting and code analysis with built-in LSP server
 - **Auto-completion**: Intelligent code completion powered by LSP
 
 ### Code Formatting & Linting
-- **Auto-format on save**: Black formatter runs automatically on Python files
-- **Type checking**: Mypy integration with virtual environment detection
-- **Real-time diagnostics**: Immediate feedback on code issues
+- **Auto-format on save**: Ruff formatter runs automatically on Python files
+- **Real-time linting**: Immediate feedback on code issues via Ruff LSP
+- **Type checking**: Pyright provides comprehensive type analysis
 
 ### Debugging Workflow
 1. Set breakpoints with `<leader>db`
@@ -76,11 +75,10 @@ This custom configuration is tailored for:
 ## 🛠️ Mason Tool Management
 
 Automatically installs and manages:
-- `black` - Code formatter
 - `debugpy` - Python debugger
-- `mypy` - Type checker
-- `ruff-lsp` - Fast linter
-- `pyright` - Language server
+- `mypy` - Type checker (via none-ls legacy support)
+- `ruff` - Ultra-fast linter and formatter with built-in LSP server
+- `pyright` - Language server for type checking and IntelliSense
 
 ## � Getting Started
 
