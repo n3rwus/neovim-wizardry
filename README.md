@@ -14,12 +14,14 @@ This custom configuration is tailored for:
 
 ```bash
 ~/.config/nvim/lua/custom/
-├── chadrc.lua           # Main NvChad configuration entry point
-├── plugins.lua          # Custom plugin specifications
-├── mappings.lua         # Additional keybindings for custom features
-├── README.md           # This file
+├── chadrc.lua            # Main NvChad configuration entry point
+├── plugins.lua           # Custom plugin specifications
+├── mappings.lua          # Additional keybindings for custom features
+├── README.md            # This file
+├── TROUBLESHOOTING.md   # Common issues and solutions guide
 └── configs/
-    └── lspconfig.lua   # LSP server configurations with auto-formatting
+    ├── lspconfig.lua    # LSP server configurations with auto-formatting
+    └── diagnostics.lua  # Configuration diagnostic tool
 ```
 
 ## 🎨 Theme & UI
@@ -94,6 +96,36 @@ Automatically installs and manages:
 - **Additional Languages**: Extend `configs/lspconfig.lua` to add more language servers
 - **Theme Changes**: Modify the theme in `chadrc.lua` (`M.ui.theme`)
 - **Custom Keybindings**: Add new mappings in `mappings.lua`
+
+## 🔍 Troubleshooting
+
+Having issues with your NvChad configuration? We provide two tools to help:
+
+### 📋 Comprehensive Troubleshooting Guide
+Check out our **[Troubleshooting Guide](./TROUBLESHOOTING.md)** which covers:
+
+- LSP setup not attaching properly
+- Plugin conflicts or double loading  
+- Custom overrides breaking modules
+- None-ls integration quirks
+- Neovim filetype detection errors
+
+The guide includes step-by-step diagnostic commands and solutions for each common issue.
+
+### 🔧 Automated Diagnostic Tool
+Run the diagnostic tool to automatically check your configuration:
+
+```vim
+:luafile configs/diagnostics.lua
+```
+
+This tool will check:
+- ✅ Chadrc configuration structure
+- ✅ Plugin installation status
+- ✅ Mason tool installations
+- ✅ LSP client status
+- ✅ Filetype detection
+- ✅ Format on save functionality
 
 ## 📝 Notes
 
